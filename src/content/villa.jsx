@@ -2,9 +2,10 @@ import React from 'react'
 import Villa1 from '../assets/villa/villa1.PNG';
  import Villa2 from '../assets/villa/villa2.PNG';
  import Villa3 from '../assets/villa/villa3.PNG';
-import ProjectImg1 from '../assets/sliderglobal/sliderCard1.webp'
-import ProjectImg2 from '../assets/sliderglobal/sliderCard2.webp'
-import ProjectImg3 from '../assets/sliderglobal/sliderCard3.webp'
+import ProjectImg1 from '../assets/villa/Kaira.webp'
+import ProjectImg2 from '../assets/villa/bildvara.webp'
+import ProjectImg3 from '../assets/villa/niharika.webp'
+
  export const pathCardContent = [
     {
       counts: '16',
@@ -68,26 +69,20 @@ import ProjectImg3 from '../assets/sliderglobal/sliderCard3.webp'
   export const ProjectSliderData = [
     {
       id: 1,
-      title: 'Project 1',
+      title: 'Kaira',
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: ProjectImg1
     },
     {
       id: 2,
-      title: 'Project 2',
+      title: 'Bilvadhara',
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: ProjectImg2
     },
     {
       id: 3,
-      title: 'Prject 3',
+      title: 'Niharika',
       content: 'Prject 2, consectetur adipiscing elit',
-      image: ProjectImg3
-    },
-    {
-      id: 4,
-      title: 'Prject 4',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
       image: ProjectImg3
     }
   ];

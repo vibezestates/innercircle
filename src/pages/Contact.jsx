@@ -1,28 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import contactBackground from "../assets/home/contactBackground.webp";
 import maskShape from "../assets/home/Maskgroup.png";
 import vectorShape from "../assets/home/Vector_form.png";
 import contactDeviderImg from "../assets/bgVector/contactDevider.png";
+import { sendOtp, verifyOtp } from "../helpers/otp";
 
 export default function ContactUs() {
+  const [step, setStep] = useState("form"); // 👉 form | otp | success
+  const [formData, setFormData] = useState(null);
+  const [otp, setOtp] = useState("");
+  const [otpError, setOtpError] = useState("");
+
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm({
-    mode: 'onSubmit', reValidateMode: 'onChange'
-
+    mode: "onSubmit",
+    reValidateMode: "onChange",
   });
 
-  const onSubmit = (data) => {
+  // Form Submit Handler
+  const onSubmit = async (data) => {
     console.log("Form submitted:", data);
-    reset();
+    setFormData(data);
+    setStep("otp");
+    const otpRes = await sendOtp(data.phone);
+    console.log("OTP Send Response:", otpRes);
+  };
+
+  const handleOtpVerify = async (e) => {
+    e.preventDefault(); // ✅ stops page refresh
+
+    const result = await verifyOtp(formData.phone, otp);
+
+    if (result?.description?.desc === "Code Matched successfully.") {
+      setOtpError("");
+      setStep("success");
+    } else {
+      setOtpError("Invalid OTP. Try again.");
+    }
   };
 
   const onError = (errors) => {
-    console.log('Form errors:', errors);
+    console.log("Form errors:", errors);
   };
 
   return (
@@ -86,105 +109,166 @@ export default function ContactUs() {
           backgroundSize: "250px, 480px",
         }}
       >
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="relative grid grid-cols-1 gap-6 w-full max-w-[460px] p-10 z-10"
-          noValidate
-        >
-          <h3 className="text-2xl font-semibold mb-2">Get in touch</h3>
-          <p className="text-sm text-gray-600 mb-4">
-            Please fill out the form below and we’ll get back to you.
-          </p>
+        {/* STEP-1: SHOW ORIGINAL FORM */}
+        {step === "form" && (
+          <form
+            onSubmit={handleSubmit(onSubmit, onError)}
+            className="relative grid grid-cols-1 gap-6 w-full max-w-[460px] p-10 z-10"
+            noValidate
+          >
+            <h3 className="text-2xl font-semibold mb-2">Get in touch</h3>
+            <p className="text-sm text-gray-600 mb-4">
+              Please fill out the form below and we’ll get back to you.
+            </p>
 
-          {[
-            {
-              name: "name",
-              label: "Name",
-              type: "text",
-              required: true
-            },
-            {
-              name: "email",
-              label: "Email",
-              type: "email",
-              required: true,
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Please enter a valid email address"
-              }
-            },
-            {
-              name: "phone",
-              label: "Phone number",
-              type: "tel",
-              required: true,
-              pattern: {
-                value: /^[0-9]{10}$/,
-                message: "Please enter a valid 10-digit phone number"
-              }
-            },
-          ].map((field) => (
-            <div key={field.name}>
-              <input
-                type={field.type}
-                placeholder={`${field.label}*`}
-                className={`w-full border-b ${errors[field.name] ? 'border-red-500' : 'border-gray-400'} focus:border-[#6b4b3e] outline-none py-3 bg-transparent placeholder:text-gray-700`}
-                {...register(field.name, {
-                  required: `${field.label} is required`,
-                  pattern: field.pattern
-                })}
-              />
-              {errors[field.name] && (
+            {[
+              {
+                name: "name",
+                label: "Name",
+                type: "text",
+                required: false,
+              },
+              {
+                name: "email",
+                label: "Email",
+                type: "email",
+                required: false,
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: "Please enter a valid email address",
+                },
+              },
+              {
+                name: "phone",
+                label: "Phone number",
+                type: "tel",
+                required: false,
+                pattern: {
+                  value: /^[6-9][0-9]{9}$/, // 10 digit starts with 6,7,8,9
+                  message:
+                    "Enter valid 10-digit number starting with 6, 7, 8, or 9",
+                },
+              },
+            ].map((field) => (
+              <div key={field.name}>
+                <input
+                  type={field.type}
+                  placeholder={`${field.label}*`}
+                  className={`w-full border-b ${
+                    errors[field.name] ? "border-red-500" : "border-gray-400"
+                  } focus:border-[#6b4b3e] outline-none py-3 bg-transparent placeholder:text-gray-700`}
+                  {...register(field.name, {
+                    required: `${field.label} is required`,
+                    pattern: field.pattern,
+                  })}
+                />
+                {errors[field.name] && (
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors[field.name].message}
+                  </p>
+                )}
+              </div>
+            ))}
+
+            <div>
+              <select
+                className={`w-full border-b ${
+                  errors.project ? "border-red-500" : "border-gray-400"
+                } focus:border-[#6b4b3e] outline-none py-3 bg-transparent text-gray-700`}
+                {...register("project", { required: "Project is required" })}
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Project name*
+                </option>
+                <option value="Luxury Villa">Luxury Villa</option>
+                <option value="Managed Farm Lands">Managed Farm Lands</option>
+                <option value="Revenue Generation">Revenue Generation</option>
+              </select>
+              {errors.project && (
                 <p className="text-red-500 text-sm mt-1">
-                  {errors[field.name].message}
+                  {errors.project.message}
                 </p>
               )}
             </div>
-          ))}
 
-          <div>
-            <select
-              className={`w-full border-b ${errors.project ? 'border-red-500' : 'border-gray-400'} focus:border-[#6b4b3e] outline-none py-3 bg-transparent text-gray-700`}
-              {...register("project", { required: "Project is required" })}
-              defaultValue=""
-            >
-              <option value="" disabled>Project name*</option>
-              <option value="Luxury Villa">Luxury Villa</option>
-              <option value="Managed Farm Lands">Managed Farm Lands</option>
-              <option value="Revenue Generation">Revenue Generation</option>
-            </select>
-            {errors.project && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.project.message}
-              </p>
+            <div>
+              <textarea
+                rows="3"
+                placeholder="Message*"
+                className={`w-full border-b ${
+                  errors.message ? "border-red-500" : "border-gray-400"
+                } focus:border-[#6b4b3e] outline-none py-3 bg-transparent resize-none placeholder:text-gray-700`}
+                {...register("message")}
+              ></textarea>
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.message.message}
+                </p>
+              )}
+            </div>
+
+            <div className="flex justify-start mt-4">
+              <button
+                type="submit"
+                className="border border-[#6b4b3e] text-[#6b4b3e] py-2 px-10 hover:bg-[#6b4b3e] hover:text-white transition"
+              >
+                SEND
+              </button>
+            </div>
+          </form>
+        )}
+
+        {/* STEP-2: OTP SCREEN */}
+        {step === "otp" && (
+          <form
+            onSubmit={verifyOtp}
+            className="w-full max-w-[380px] p-10 bg-white rounded-lg shadow-lg"
+          >
+            <h3 className="text-2xl font-semibold text-center mb-4">
+              OTP Verification
+            </h3>
+
+            <p className="text-gray-600 mb-4 text-center">
+              OTP sent to <strong>{formData?.phone}</strong>
+            </p>
+
+            <input
+              type="text"
+              maxLength={6}
+              value={otp}
+              onChange={(e) => setOtp(e.target.value)}
+              placeholder="Enter OTP"
+              className="w-full border-b border-gray-400 focus:border-[#6b4b3e] outline-none py-3 text-center text-lg"
+            />
+
+            {otpError && (
+              <p className="text-red-500 text-sm mt-2">{otpError}</p>
             )}
-          </div>
 
-          <div>
-            <textarea
-              rows="3"
-              placeholder="Message*"
-              className={`w-full border-b ${errors.message ? 'border-red-500' : 'border-gray-400'} focus:border-[#6b4b3e] outline-none py-3 bg-transparent resize-none placeholder:text-gray-700`}
-              {...register("message", { required: "Message is required" })}
-            ></textarea>
-            {errors.message && (
-              <p className="text-red-500 text-sm mt-1">
-                {errors.message.message}
-              </p>
-            )}
-          </div>
-
-          <div className="flex justify-start mt-4">
             <button
-              type="submit"
-              className="border border-[#6b4b3e] text-[#6b4b3e] py-2 px-10 hover:bg-[#6b4b3e] hover:text-white transition"
+              
+              className="mt-6 w-full bg-[#6b4b3e] text-white py-2 rounded hover:bg-[#573c32]"
+              onClick={handleOtpVerify}
             >
-              SEND
+              VERIFY OTP
             </button>
-          </div>
-        </form>
-      </div>
+          </form>
+        )}
 
+        {/* STEP-3: SUCCESS SCREEN */}
+        {step === "success" && (
+          <div className="w-full max-w-[380px] p-10 bg-white rounded-lg shadow-lg text-center">
+            <h3 className="text-2xl font-semibold text-green-600">
+              ✅ Success!
+            </h3>
+            <p className="mt-3 text-gray-700">
+              Your details have been successfully submitted. We will reach out
+              to you soon.
+            </p>
+          </div>
+        )}
+      </div>
     </section>
   );
 }
