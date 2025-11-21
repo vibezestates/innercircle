@@ -44,7 +44,7 @@ export default function FullSlider() {
           image={BannerImg}
           title="Join the Vibez tribe"
           content="Your dream lifestyle starts here, with the coolest crew in town. Explore exclusive properties and investment opportunities."
-          button="Learn more"
+          button="Learn more!"
         />
       </div>
       {/* <div index="2">
