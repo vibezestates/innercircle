@@ -1,0 +1,26 @@
+name: Deploy Vibezestates
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup SSH Key
+        shell: bash
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.VPS_VIBEZ_KEY }}" > ~/.ssh/vps_key
+          chmod 600 ~/.ssh/vps_key
+          ssh-keyscan -H 93.127.195.157 >> ~/.ssh/known_hosts
+
+      - name: Execute deploy script on server
+        shell: bash
+        run: |
+          ssh -i ~/.ssh/vps_key -o StrictHostKeyChecking=no root@93.127.195.157 "bash /root/deploy-vibezestates.sh"
