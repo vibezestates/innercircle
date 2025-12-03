@@ -26,6 +26,7 @@ export default function ContactUs() {
   const onSubmit = async (data) => {
     console.log("Form submitted:", data);
     setFormData(data);
+    await saveLead(data);
     setStep("otp");
     const otpRes = await sendOtp(data.phone);
     console.log("OTP Send Response:", otpRes);
@@ -42,7 +43,7 @@ export default function ContactUs() {
       
       setOtpError("");
       setStep("success");
-      await saveLead(formData);
+      // await saveLead(formData);
     } else {
       setOtpError("Invalid OTP. Try again.");
     }
