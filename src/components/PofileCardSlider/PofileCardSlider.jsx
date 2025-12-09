@@ -28,14 +28,7 @@ const profileData = [
     subtitle: "CEO",
     content: "",
     image: ashwinImg,
-  },
-  {
-    id: 3,
-    title: "Mr. Uday",
-    subtitle: "Senior Architect",
-    content: "",
-    image: udayImg,
-  },
+  } 
 ];
 
 function PofileCardSlider() {
@@ -69,7 +62,7 @@ function PofileCardSlider() {
     speed: 500,
     slidesToShow:
       windowWidth >= 1024
-        ? 3
+        ? 2
         : windowWidth >= 768
         ? 2 
         : 1,

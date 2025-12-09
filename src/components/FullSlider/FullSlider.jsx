@@ -45,6 +45,7 @@ export default function FullSlider() {
           title="Join the Vibez tribe"
           content="Your dream lifestyle starts here, with the coolest crew in town. Explore exclusive properties and investment opportunities."
           button="Learn more!"
+          buttonClick={() => { window.location = '/contact'; console.log("Button clicked"); }}
         />
       </div>
       {/* <div index="2">

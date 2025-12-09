@@ -5,6 +5,8 @@ import Villa1 from '../assets/villa/villa1.PNG';
 import ProjectImg1 from '../assets/farmland/vanasya.webp'
 import ProjectImg2 from '../assets/farmland/sirivana.webp'
 import ProjectImg3 from '../assets/farmland/bluehills.webp';
+import KairaImg from '../assets/farmland/kaira.webp';
+import BlueHillsImg from '../assets/farmland/image.png';
  export const pathCardContent = [
     {
       counts: '16',
@@ -74,15 +76,15 @@ import ProjectImg3 from '../assets/farmland/bluehills.webp';
     },
     {
       id: 2,
-      title: 'Sirivana',
+      title: 'Kaira',
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-      image: ProjectImg2
+      image: KairaImg
     },
     {
       id: 3,
       title: 'Bluehills',
       content: 'Prject 2, consectetur adipiscing elit',
-      image: ProjectImg3
+      image: BlueHillsImg
     }
   ];
   

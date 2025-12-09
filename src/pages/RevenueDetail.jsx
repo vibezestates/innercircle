@@ -4,7 +4,7 @@ import ChooseVibez from '../components/ChooseVibez/ChooseVibez';
 import AboutSection from '../components/ChooseVibez/AboutSection';
 import CardOne from '../components/Card/CardOne';
 import JoinVebz from '../assets/home/JoinVebz.jpg';
-import bannerImg from "../assets/home/banner6.webp"
+import bannerImg from "../assets/home/contactBackground.webp"
 export default function RevenueDetail() {
   return (
     <>

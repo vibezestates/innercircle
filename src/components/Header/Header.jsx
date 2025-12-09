@@ -59,7 +59,7 @@ const Header = () => {
             to="/contact"
             className="border border-black text-black px-4 py-2 hover:bg-black hover:text-white transition whitespace-nowrap"
           >
-            Talk to us
+            Contact Us
           </Link>
         </div>
 

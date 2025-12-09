@@ -21,7 +21,13 @@ export const SliderWrapper = styled.div`
   }
 
     .slick-slider {
-
+    .slick-list {
+      .slick-track {
+      display: flex;
+    align-items: center;
+    justify-content: center;
+      }
+}
       .slick-slide.slick-active {
     max-width: 32%;
 }
