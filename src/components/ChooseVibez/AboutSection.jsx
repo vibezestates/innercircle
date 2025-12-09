@@ -11,7 +11,7 @@ import {
   Divider,
 } from "./AboutSection.style";
 
-import revenueDiscussion from "../../assets/villa/Villa3.png";
+import revenueDiscussion from "../../assets/cards/room.webp";
 import ChooseVibez6 from "../../assets/home/ChooseVibez6.png";
 import ChooseVibez7 from "../../assets/home/ChooseVibez7.png";
 import ChooseVibez8 from "../../assets/home/ChooseVibez8.png";
