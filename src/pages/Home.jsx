@@ -57,7 +57,7 @@ const Home = () => {
         />
         <VibezSection />
       <Tombsection bgColor={"#104D39"} bgTheme="green-color-with-vector" color={'white'} logo={Flower} imgSrc={Scenery} btn={true} BG={BG}
-      heading={"Discover our latest ventures."} content={"Explore upcoming real estate developments and investment opportunities."} btnText={"Discover Farmlands"}
+      heading={"Discover our latest ventures."} content={"Explore upcoming real estatesdevelopments and investment opportunities."} btnText={"Discover Farmlands"}
       fontStyle={"font-poppins"}
       link={"/farmland"}
       />

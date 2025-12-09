@@ -22,14 +22,14 @@ export default function Section1() {
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
                         variants={slideFromLeft()}>
-                        Transforming landscapes and lives through exceptional real estate ventures
+                        Transforming landscapes and lives through exceptional real estates ventures
                     </motion.p>
                     <br />
                     <motion.p
                         initial="hidden"
                         animate={isInView ? "visible" : "hidden"}
                         variants={slideFromRight()}>
-                        Vibez Estates is more than just a real estate company. We're a team based in Karnataka with a vision to transform landscapes and lives through exceptional real estate ventures across the city.
+                        Vibez Estates is more than just a real estates company. We're a team based in Karnataka with a vision to transform landscapes and lives through exceptional real estates ventures across the city.
 
                         <br />
                         <br />

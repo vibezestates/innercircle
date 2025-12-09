@@ -36,7 +36,7 @@ export default function VibezSection() {
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
                             imgSrc={Img1} title="Personalized Service" description="We understand that every investor has unique needs. Our team ensures your investment aligns perfectly with your goals." />
-                        <CardTwo imgSrc={Img2} title="Unmatched Experience" description="With years of experience in the real estate market, our team will ensure you make informed decisions and maximize your returns." />
+                        <CardTwo imgSrc={Img2} title="Unmatched Experience" description="With years of experience in the real estates market, our team will ensure you make informed decisions and maximize your returns." />
                         <CardTwo imgSrc={Img3} title="Proven Track Record" description="We have a well-established reputation for success, with a proven track record of delivering exceptional results for our clients." />
                     </Vibezcard>
                     <Vibezcard className='flex flex-row  items-baseline justify-center'>
