@@ -7,7 +7,7 @@ const menuConfig = [
     path: "/villa",
     children: [
       { title: "Kaira", path: "/kaira-2" },
-      { title: "Bilvadara", path: "/bilvadara" },
+      { title: "Bilvadara", path: "/bilvadhara" },
       { title: "Niharika(Coming soon)", path: "/niharika" },
     ],
   },
