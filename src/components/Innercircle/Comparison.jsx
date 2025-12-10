@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../../images/chooseBg.webp";
+import bgImage from "../../images/invest.webp";
 
 const Comparison = () => {
     const items = [

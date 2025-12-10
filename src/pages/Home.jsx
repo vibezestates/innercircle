@@ -21,19 +21,33 @@ import PreLaunch from "../components/Innercircle/PreLaunch";
 import InvestmentZone from "../components/Innercircle/InvestmentZone";
 import Comparison from "../components/Innercircle/Comparison";
 import WesternGhatsDestination from "../components/Innercircle/WesternGhatsDestination";
+import Map from "../components/Innercircle/Map";
+import Gallery from "../components/Innercircle/Gallery";
+import Record from "../components/Innercircle/Record";
+import TrustBadge1 from "../components/Innercircle/TrustBadge1";
+import Faq from "../components/Innercircle/Faq";
+import Review from "../components/Innercircle/Review";
+import Life from "../components/Innercircle/Life";
 
 
 const Home = () => {
   return (
     <>
     <Banner />
-    <TrustBadge />
+    <TrustBadge />      
     <InfoSection />
     <Choose />
     <PreLaunch />
     <InvestmentZone />
     <Comparison />
     <WesternGhatsDestination />
+    <Map />
+    <Gallery />
+    <Record />
+    <TrustBadge1 />      
+    <Faq />
+    <Review /> 
+    <Life />
 
 
     </>

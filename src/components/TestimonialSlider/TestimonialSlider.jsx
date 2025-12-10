@@ -24,7 +24,7 @@ export default function TestimonialSlider({ cardData, sliderTitle }) {
   const settings = {
     className: "testimonial",
     infinite: true,
-    slidesToShow: windowWidth >= 1024 ? 2 : windowWidth >= 768 ? 2 : 1,
+    slidesToShow: windowWidth >= 1024 ? 4 : windowWidth >= 768 ? 2 : 1,
     slidesToScroll: 1,
     speed: 300,
     arrows: false,
