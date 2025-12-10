@@ -20,7 +20,6 @@ export default function Conatct(props) {
     centerMode: true,
     infinite: true,
     centerPadding: "20%",
-    slidesToShow: 1,
     slidesToShow: 2,
     speed: 500,
     arrows: false,
