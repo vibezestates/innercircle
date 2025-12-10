@@ -1,4 +1,4 @@
-name: Deploy Vibezestates
+name: Deploy Innercircle
 
 on:
   push:
@@ -7,20 +7,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Setup SSH Key
-        shell: bash
+      - name: Set up SSH for server
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.VPS_VIBEZ_KEY }}" > ~/.ssh/vps_key
+          echo "${{ secrets.VPS_INNERCIRCLE_KEY }}" > ~/.ssh/vps_key
           chmod 600 ~/.ssh/vps_key
           ssh-keyscan -H 93.127.195.157 >> ~/.ssh/known_hosts
 
-      - name: Execute deploy script on server
-        shell: bash
+      - name: Deploy to VPS
         run: |
-          ssh -i ~/.ssh/vps_key -o StrictHostKeyChecking=no root@93.127.195.157 "bash /root/deploy-vibezestates.sh"
+          ssh -i ~/.ssh/vps_key -o StrictHostKeyChecking=no root@93.127.195.157 "bash /root/deploy-innercircle.sh"
