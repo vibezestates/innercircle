@@ -13,54 +13,28 @@ import Flower from '/src/assets/section2/flower.png';
 import Tombsection from "../components/CommonSection/Tombsection";
 import VibezSection from "../components/VibezSection/VibezSection";
 import BG from '/src/assets/bgVector/lines.png';
+import Banner from "../components/Innercircle/Banner";
+import TrustBadge from "../components/Innercircle/TrustBadge";
+import InfoSection from "../components/Innercircle/InfoSection";
+import Choose from "../components/Innercircle/Chhose";
+import PreLaunch from "../components/Innercircle/PreLaunch";
+import InvestmentZone from "../components/Innercircle/InvestmentZone";
+import Comparison from "../components/Innercircle/Comparison";
+import WesternGhatsDestination from "../components/Innercircle/WesternGhatsDestination";
+
 
 const Home = () => {
   return (
     <>
+    <Banner />
+    <TrustBadge />
+    <InfoSection />
+    <Choose />
+    <PreLaunch />
+    <InvestmentZone />
+    <Comparison />
+    <WesternGhatsDestination />
 
-      <FullSlider />
-      <Section1 />
-      <CardOne rev={true}
-        bgColor={"#104D391A"}
-        bgColor2={"#104D39"}
-        img1={CherryImg}
-        img2={Vector1Img}
-        heading={"Managed farmlands"}
-        btnLine={"Discover farmlands"}
-        description={"Call a piece of paradise, yours. We offer diverse investment options like coffee plantations and teakwood groves. Our experts manage every aspect of your farm, from planting to sales, focusing on sustainable practices that protect your investment and the environment."}
-        color={"#FFFFFF"}
-        link={"/farmland"}
-      />
-
-      <CardOne rev={false}
-        bgColor={"#DDD7CB4D"}
-        bgColor2={"#DDD7CB"}
-        img1={RoomImg}
-        img2={LuxuryImg}
-        heading={"Luxury Villas & Resorts"}
-        btnLine={"Explore luxury"}
-        description={"Unveil the art of luxury living and immerse yourself in the tranquility of luxury villas and resorts. Each villa and resort offers a unique escape into indulgence and natural beauty, with world-class amenities designed to rejuvenate your spirit and enhance your lifestyle."}
-        color={"#000000"}
-        link={"/villa"}
-      />
-
-      <CardOne rev={true}
-        bgColor={"#6D351833"}
-        bgColor2={"#6D3518"}
-        img1={ChessImg}
-        img2={VectorImg}
-        heading={"Revenue Generation"}
-        btnLine={"Learn More"}
-        description={"Your investment should work as hard as you do. Our strategic rental programs and expert property management ensure your villa or resort generates competitive returns, with transparency and ease."}
-        color={"#FFFFFF"} 
-        link={"/revenue"}
-        />
-        <VibezSection />
-      <Tombsection bgColor={"#104D39"} bgTheme="green-color-with-vector" color={'white'} logo={Flower} imgSrc={Scenery} btn={true} BG={BG}
-      heading={"Discover our latest ventures."} content={"Explore upcoming real estatesdevelopments and investment opportunities."} btnText={"Discover Farmlands"}
-      fontStyle={"font-poppins"}
-      link={"/farmland"}
-      />
 
     </>
   );

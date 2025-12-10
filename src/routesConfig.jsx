@@ -10,9 +10,9 @@ import Bilvadhara from './pages/Bilvadhara'
 import Niharika from './pages/Niharika'
 
  const routes = [
-  { path: '/', element: <Home />, meta : {title: 'Home - Vibez Estates'} },
-  { path: '/about', element: <About />,meta :{ title: 'About Us - Vibez Estates'} },
-  { path: '/villa', element: <VillaContent />, meta: { title: 'Villa - Vibez Estates' } },
+  { path: '/', element: <Home />, meta : {title: 'Inner circle - Vibez Estates'} },
+  { path: '/#Opportunity', element: <About />,meta :{ title: 'About Us - Vibez Estates'} },
+  { path: '/#Compare', element: <VillaContent />, meta: { title: 'Villa - Vibez Estates' } },
   { path: '/farmland', element: <FarmlandPage />, meta: { title: 'Farmland - Vibez Estates' } },
   { path: '/kaira-2', element: <Kaira />, meta: { title: 'Kaira - project - Vibez Estates' } },
   { path: '/revenue', element: <RevenueDetail />, meta: { title: 'Revenue Details - Vibez Estates' } },

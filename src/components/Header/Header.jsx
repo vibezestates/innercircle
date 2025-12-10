@@ -55,12 +55,12 @@ const Header = () => {
         </button>
 
         <div className="flex-shrink-0">
-          <Link
+          {/* <Link
             to="/contact"
             className="border border-black text-black px-4 py-2 hover:bg-black hover:text-white transition whitespace-nowrap"
           >
             Contact Us
-          </Link>
+          </Link> */}
         </div>
 
         <nav

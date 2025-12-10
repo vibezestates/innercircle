@@ -24,7 +24,7 @@ const Footer = () => {
 
   return (
     <>
-      <Connect content={"Fulfill your real estates aspirations now"} heading={"CONNECT WITH US"} bgColor={"#F2EFEC"} btnText={"Get in Touch"} color={"black"}/>
+     
       {pathname==="/revenue" && <Connect content={"Experience the Vibez difference. Click the button below to book a demo and learn more about our offerings."} heading={"Book a Demo"} btnText={"Book a Demo now"} bg={Field} color={"white"}/>}
       <Container className="text-black px-4 mt-auto">
         <div className="container mx-auto px-4 py-4 flex justify-between">

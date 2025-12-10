@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import Banner from "./Banner";
 import { SliderNextButton, SliderPrevButton } from './Banner.style'
 import BannerArrows from "../../assets/sliderglobal/right-arrow.png";
-import BannerImg from "../../assets/home/banner1.webp";
+import BannerImg from "../../images/homBanner.webp";
 import './banner.css'
 export default function FullSlider() {
 
@@ -42,10 +42,11 @@ export default function FullSlider() {
       <div index="1">
         <Banner
           image={BannerImg}
-          title="Join the Vibez tribe"
-          content="Your dream lifestyle starts here, with the coolest crew in town. Explore exclusive properties and investment opportunities."
+          title="VIBEZ Inner Circle"
+          content="An Exclusive Investment Destination in the Heart of Nature, set amid Sakleshpur’s Luxury Coffee Estate Corridor"
           button="Learn more!"
           buttonClick={() => { window.location = '/contact'; console.log("Button clicked"); }}
+          bgEffect={true}
         />
       </div>
       {/* <div index="2">

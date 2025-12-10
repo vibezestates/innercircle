@@ -1,20 +1,15 @@
 // src/config/menuConfig.js
 const menuConfig = [
-  { title: "Home", path: "/" },
-  { title: "About Us", path: "/about" },
-   {
-    title: "Luxury Villas",
-    path: "/villa",
-    children: [
-      { title: "Kaira", path: "/kaira-2" },
-      { title: "Bilvadara", path: "/bilvadhara" },
-      { title: "Niharika(Coming soon)", path: "/niharika" },
-    ],
-  },
-  { title: "Revenue Generation", path: "/revenue" },
+  { title: "Opportunity", path: "/#Opportunity" },
+  { title: "Compare", path: "/#Compare" },,
+  { title: "Pre-Launch Advantage", path: "/#Pre-Launch-Advantage" },
   {
-    title: "Managed Farmlands",
-    path: "/farmland",
+    title: "Gallery",
+    path: "/#Gallery",
+  },
+  {
+    title: "FAQs",
+    path: "/#FAQs",
   },
  
   // { title: "Contact Us", path: "/contact" },
