@@ -32,7 +32,7 @@ export default function Faq() {
   };
 
   return (
-    <div className="bg-white flex items-center justify-center p-10">
+    <div className="bg-white flex items-center justify-center p-10" id='FAQs'>
       <div className="max-w-3xl w-full">
         <div className="text-center mb-12">
           <h1 className="text-[36px] dm-serif-italic">Frequently Asked Questions</h1>

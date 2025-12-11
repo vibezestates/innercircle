@@ -5,7 +5,8 @@ import styled from "styled-components";
 import LogoImg from "../../assets/header/logo.png";
 import ChevronDown from "/src/assets/header/chevron-down.svg";
 import menuConfig from "../../config/menuConfig";
-
+import PhoneImg from "../../images/icons/phone.png"
+import WhatsApp  from "../../images/icons/whatsapp.png"
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -29,6 +30,14 @@ const Header = () => {
     setIsOpen(false);
   };
 
+  const handleMenuClick = (id) => {
+    console.log(id);
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   const Logo = styled.img`
     width: 95.33px;
     height: 67px;
@@ -46,13 +55,13 @@ const Header = () => {
         <Link to="/" className="cursor-pointer flex-shrink-0">
           <Logo src={LogoImg} alt="Logo" />
         </Link>
-        <button
+        {/* <button
           className="lg:hidden flex-shrink-0 text-gray-700"
           onClick={toggleMenu}
           aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        > */}
+          {/* {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button> */}
 
         <div className="flex-shrink-0">
           {/* <Link
@@ -61,6 +70,10 @@ const Header = () => {
           >
             Contact Us
           </Link> */}
+          <div className="flex align-center gap-4" style={{ alignItems: "center"}}>
+            <a href="tel:+9185508 82882"   ><img className="w-[20px]"  src={PhoneImg} /></a>
+            <a href="https://api.whatsapp.com/send/?phone=%2B919743346989&text&type=phone_number&app_absent=0"  target="_blank"><img  className="w-[30px]" src={WhatsApp} /></a>
+          </div>
         </div>
 
         <nav
@@ -83,15 +96,16 @@ const Header = () => {
                 onMouseEnter={() => handleMouseEnter(menu.title)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link
+                <button
                   to={menu.path}
+                  onClick={() => { handleMenuClick(menu?.id) }}
                   className="flex items-center hover:text-black transition font-inter cursor-pointer whitespace-nowrap text-[15px] xl:text-base"
                 >
                   {menu.title}
                   {hasChildren && (
                     <img src={ChevronDown} alt="Dropdown" className="ml-1" />
                   )}
-                </Link>
+                </button>
 
                 {hasChildren && activeDropdown === menu.title && (
                   <div className="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-md py-2 z-50">
@@ -114,7 +128,7 @@ const Header = () => {
       </div>
 
       {/* MOBILE MENU */}
-      {isOpen && (
+      {/* {isOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200">
           <nav className="flex flex-col p-4 space-y-3 text-gray-700 font-medium">
             {menuConfig.map((menu, index) => {
@@ -152,7 +166,7 @@ const Header = () => {
             })}
           </nav>
         </div>
-      )}
+      )} */}
     </header>
   );
 };

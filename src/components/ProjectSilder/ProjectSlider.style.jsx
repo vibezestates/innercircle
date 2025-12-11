@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Gallery = styled.div`
   display: flex;
+  padding-bottom: 25px;
   flex-direction: column;
   justify-content: center;
 `;

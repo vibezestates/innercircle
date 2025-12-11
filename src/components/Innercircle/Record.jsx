@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../../images/chooseBg.webp";
+import bgImage from "../../images/gallery/gl1.webp";
 
 const Record = () => {
     const items = [
@@ -28,7 +28,7 @@ const Record = () => {
     return (
         <section className="relative w-full pt-20 pb-8" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             {/* Background Image with 30% Overlay */}
-            <div className="absolute inset-0 bg-black/60"></div>
+            <div className="absolute inset-0 bg-black/30"></div>
             <div className="relative w-full  flex items-center justify-center" >
 
                 <div />

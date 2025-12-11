@@ -22,7 +22,7 @@ const Comparison = () => {
     ];
 
     return (
-        <section className="relative w-full pt-20 pb-8" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <section id='compare' className="relative w-full pt-20 pb-8" style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
             {/* Background Image with 30% Overlay */}
             <div className="absolute inset-0 bg-black/60"></div>
             <div className="relative w-full  flex items-center justify-center" >

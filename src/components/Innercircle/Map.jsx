@@ -8,7 +8,7 @@ function Map() {
 
 
             <div className="header">
-                <h6 className="text-[36px] dm-serif-italic text-[#FFFFFFCC] max-w-[1100px] m-auto mb-6">Where accessibility meets altitude. Where growth meets greenery.</h6>
+                <h6 className="text-[36px] dm-serif-italic text-[#FFFFFFCC] max-w-[1100px] m-auto mb-6 px-3">Where accessibility meets altitude. Where growth meets greenery.</h6>
                 <div className="w-full">
                     <img className="w-full max-h-[400px] object-cover" src={mapImg} />
                 </div>

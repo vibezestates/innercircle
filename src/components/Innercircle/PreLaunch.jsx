@@ -1,9 +1,10 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
+import Buttons from './Buttons';
 
 export default function PreLaunch() {
   return (
-    <div className="pt-15   pb-8 bg-[#F2FFFB] flex items-center justify-center p-4">
+    <div id="prelaunch" className="pt-15   pb-8 bg-[#F2FFFB] flex items-center justify-center p-4">
       <div className="max-w-4xl w-full bg-[#F2FFFB] ">
         <div className="text-center mb-8">
           <p className="text-[#333333] fw500 inter-tight text-sm  tracking-wider uppercase mb-4">
@@ -45,12 +46,7 @@ export default function PreLaunch() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button className="bg-emerald-800 hover:bg-emerald-900 text-white font-semibold px-8 py-4 rounded transition-all duration-300">
-            <span className="tracking-wider uppercase text-sm">Book a Private Consultation</span>
-          </button>
-          <button className="bg-emerald-800 hover:bg-emerald-900 text-white p-4 rounded transition-all duration-300">
-            <Phone className="w-5 h-5" />
-          </button>
+          <Buttons buttonText="Book A Private Consultation" showPhoneButton={true} />
         </div>
       </div>
     </div>

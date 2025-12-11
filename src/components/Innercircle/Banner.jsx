@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Phone } from 'lucide-react';
 import bgImage from '../../images/homBanner.webp'
 import logoImage from '../../images/logo.png'
+import ContactForm from './ContactForm';
 
 
 export default function Banner() {
@@ -131,48 +132,8 @@ export default function Banner() {
                     </div>
 
 
-                    <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-8 border border-white border-opacity-20">
-                        <div className="space-y-4">
-
-
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded text-white placeholder-gray-300 focus:outline-none focus:border-emerald-400 focus:bg-opacity-30 transition"
-                            />
-
-
-                            <input
-                                type="tel"
-                                name="mobile"
-                                placeholder="+91 | Mobile Number"
-                                value={formData.mobile}
-                                onChange={handleChange}
-                                className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded text-white placeholder-gray-300 focus:outline-none focus:border-emerald-400 focus:bg-opacity-30 transition"
-                            />
-
-
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="Email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                className="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded text-white placeholder-gray-300 focus:outline-none focus:border-emerald-400 focus:bg-opacity-30 transition"
-                            />
-
-
-                            <button
-                                onClick={handleSubmit}
-                                className="w-full bg-emerald-700 hover:bg-emerald-600 text-white py-4 rounded font-medium uppercase tracking-wider transition flex items-center justify-center gap-2 group"
-                            >
-                                <span>Book a Private Consultation</span>
-                                <Phone className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                            </button>
-                        </div>
+                    <div className="bg-opacity-10 backdrop-blur-md rounded-lg p-8  ">
+                        <ContactForm    />
                     </div>
 
                 </div>

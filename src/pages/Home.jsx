@@ -28,27 +28,33 @@ import TrustBadge1 from "../components/Innercircle/TrustBadge1";
 import Faq from "../components/Innercircle/Faq";
 import Review from "../components/Innercircle/Review";
 import Life from "../components/Innercircle/Life";
+import FormSection from "../components/Innercircle/FormSection";
+import { Form } from "react-router-dom";
 
 
 const Home = () => {
   return (
     <>
-    <Banner />
-    <TrustBadge />      
-    <InfoSection />
-    <Choose />
-    <PreLaunch />
-    <InvestmentZone />
-    <Comparison />
-    <WesternGhatsDestination />
-    <Map />
-    <Gallery />
-    <Record />
-    <TrustBadge1 />      
-    <Faq />
-    <Review /> 
-    <Life />
-
+      {/* <ContactForm  /> */}
+      <div id="Opportunity">
+        <Banner />
+      </div>
+      
+      <TrustBadge />
+      <InfoSection />
+      <Choose />
+      <PreLaunch />
+      <InvestmentZone />
+      <Comparison />
+      <WesternGhatsDestination />
+      <Map />
+      <Gallery />
+      <Record />
+      <TrustBadge1 />
+      <Faq />
+      <Review />
+      <Life />
+      <FormSection />
 
     </>
   );

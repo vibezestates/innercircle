@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect}  from 'react';
 import Slider from 'react-slick';
 
 import SliderCardItem from '../SliderCardItem/SliderCardItem';
@@ -14,13 +14,20 @@ import RoudrightArrow from '../../assets/sliderglobal/rounded-right-arrow.png';
 
 export default function Conatct(props) {
   const sliderRef = React.useRef(null);
+      const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    
+      useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+      }, []);
 
   const settings = {
     className: "center",
     centerMode: true,
     infinite: true,
     centerPadding: "20%",
-    slidesToShow: 2,
+    slidesToShow:  windowWidth >= 1024 ? 4 : windowWidth >= 768 ? 2 : 1,
     speed: 500,
     arrows: false,
     responsive: [

@@ -3,7 +3,7 @@ import Slider from 'react-slick';
 
 export const SliderWrapper = styled.div`
   width: 100%;
-  padding: 60px 0;
+
   overflow: hidden;
   position: relative;
 `;

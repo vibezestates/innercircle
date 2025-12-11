@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect}  from 'react';
 import Slider from "react-slick";
 
 const Review = () => {
@@ -9,6 +9,13 @@ const Review = () => {
     { name: "Rekha Motwani", text: "I strongly urge that you visit This agency for a stress-free experience. They perform all of the hard lifting. The best group to work with to locate a high-quality home. Highly recommended." },
   ];
 
+       const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+      
+        useEffect(() => {
+          const handleResize = () => setWindowWidth(window.innerWidth);
+          window.addEventListener("resize", handleResize);
+          return () => window.removeEventListener("resize", handleResize);
+        }, []);
   const settings = {
     dots: true,
     arrows: false,
@@ -16,7 +23,7 @@ const Review = () => {
     autoplay: true,
     autoplaySpeed: 2500,
     speed: 600,
-    slidesToShow: 4,
+    slidesToShow: windowWidth >= 1024 ? 4 : windowWidth >= 768 ? 2 : 1,
     slidesToScroll: 1,
 
     // RESPONSIVE BREAKPOINTS
