@@ -62,7 +62,10 @@ export default function ContactForm({
 
   if (step === 1) {
     return (
-      <form onSubmit={handleSubmit(submitForm)} className="space-y-2">
+      <form onSubmit={(e) => {
+    e.preventDefault();
+    handleSubmit(submitForm)(e);
+  }} className="space-y-2">
         {/* NAME */}
         <div className="mb-1">
           <div className="relative">
