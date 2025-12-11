@@ -11,11 +11,13 @@ function Buttons({ buttonText = "Book A Private Consultation", showPhoneButton =
   }
     return (
         <div className="max-w-[500px] m-auto flex gap-2 pt-4 pb-2 px-5">
-            <button
+
+               <button
                 type="Book A Private Consultation"
                 onClick={() => handleMenuClick('contact')}
-                className="flex-1 bg-[#104D39] hover:bg-[#104d39a6] uppercase text-white font-medium py-4 px-6 transition-colors disabled:opacity-50 cursor-pointer flex items-center justify-center"
-            >
+                className=" premium-gold glow-border flex-1 uppercase text-white font-medium py-4 px-6 
+               cursor-pointer flex items-center justify-center"
+                >
 
                 {buttonText}
             </button>
@@ -24,7 +26,7 @@ function Buttons({ buttonText = "Book A Private Consultation", showPhoneButton =
                 <button
                     type="button"
                     onClick={() => (window.location.href = "tel:+9185508 82882")}
-                    className="bg-[#104D39] hover:bg-[#104d39a6] text-white p-4 transition-colors cursor-pointer"
+                    className="premium-gold bg-[#104D39] hover:bg-[#104d39a6] text-white p-4 transition-colors cursor-pointer"
                 >
                     <Phone className="w-5 h-5" />
                 </button>

@@ -29,6 +29,7 @@ import Faq from "../components/Innercircle/Faq";
 import Review from "../components/Innercircle/Review";
 import Life from "../components/Innercircle/Life";
 import FormSection from "../components/Innercircle/FormSection";
+import StickyButtons from "../components/Innercircle/StickyButtons";
 import { Form } from "react-router-dom";
 
 
@@ -55,7 +56,7 @@ const Home = () => {
       <Review />
       <Life />
       <FormSection />
-
+      <StickyButtons />
     </>
   );
 };

@@ -175,7 +175,7 @@ export default function ContactForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="flex-1 bg-[#104D39] hover:bg-[#104d39a6] text-white font-medium py-4 px-6 transition-colors disabled:opacity-50 cursor-pointer flex items-center justify-center"
+            className="premium-gold flex-1 bg-[#104D39] hover:bg-[#104d39a6] text-white font-medium py-4 px-6 transition-colors disabled:opacity-50 cursor-pointer flex items-center justify-center"
           >
             {isSubmitting ? "SUBMITTING..." : buttonText}
           </button>
@@ -184,7 +184,7 @@ export default function ContactForm({
             <button
               type="button"
               onClick={() => (window.location.href = "tel:+91")}
-              className="bg-[#104D39] hover:bg-[#104d39a6] text-white p-4 transition-colors cursor-pointer"
+              className="premium-gold bg-[#104D39] hover:bg-[#104d39a6] text-white p-4 transition-colors cursor-pointer"
             >
               <Phone className="w-5 h-5" />
             </button>
@@ -215,7 +215,7 @@ export default function ContactForm({
         )}
         <button
           onClick={() => verifyOtp1(otp)}
-          className="w-full bg-[#104D39] hover:bg-[#104d39a6] text-white font-medium py-4 transition-colors cursor-pointer mt-4"
+          className="premium-gold w-full bg-[#104D39] hover:bg-[#104d39a6] text-white font-medium py-4 transition-colors cursor-pointer mt-4"
         >
           Verify OTP
         </button>
