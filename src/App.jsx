@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ScrolltoTop from './ScrolltoTop';
 import "./App.css";
+import ThankYou from './components/ThankYou';
 export default function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ export default function App() {
             element={<MainLayout meta={meta}>{element}</MainLayout>}
           />
         ))}
+         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
     </Router>
   );

@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Phone } from "lucide-react";
 import { sendOtp, verifyOtp, saveLead } from "../../helpers/otp";
+import { useNavigate } from "react-router-dom";
+
 
 export default function ContactForm({
   buttonText = "Book A Private Consultation",
   showPhoneButton = true,
 }) {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [error, setError] = useState(false);
   const [userData, setUserData] = useState(null);
@@ -46,6 +49,7 @@ export default function ContactForm({
 
       if (result?.description?.desc === "Code Matched successfully.") {
         
+        navigate('/thank-you')
         setStep(3);
         reset();
       } else {
