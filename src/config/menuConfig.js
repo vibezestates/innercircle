@@ -1,8 +1,8 @@
 // src/config/menuConfig.js
 const menuConfig = [
   { title: "Opportunity",id:"Opportunity", path: "/#Opportunity" },
-  { title: "Compare", id:'compare', path: "/#Compare" },,
-  { title: "Pre-Launch Advantage",id:'prelaunch', path: "/#Pre-Launch-Advantage" },
+  { title: "Compare", id:'Compare', path: "/#Compare" },
+  { title: "Pre-Launch Advantage",id:'Pre-Launch-Advantage', path: "/#Pre-Launch-Advantage" },
   {
     title: "Gallery",
     path: "/#Gallery",
@@ -12,6 +12,11 @@ const menuConfig = [
     title: "FAQs",
     path: "/#FAQs",
     id:'FAQs'
+  },
+  {
+    title: "Contact Us",
+    path: "/#Contact-Us",
+    id:'Contact-Us'
   },
  
   // { title: "Contact Us", path: "/contact" },

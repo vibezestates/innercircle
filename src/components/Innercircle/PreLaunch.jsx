@@ -4,7 +4,7 @@ import Buttons from './Buttons';
 
 export default function PreLaunch() {
   return (
-    <div id="prelaunch" className="pt-15   pb-8 bg-[#F2FFFB] flex items-center justify-center p-4">
+    <div id="Pre-Launch-Advantage" className="pt-15   pb-8 bg-[#F2FFFB] flex items-center justify-center p-4">
       <div className="max-w-4xl w-full bg-[#F2FFFB] ">
         <div className="text-center mb-8">
           <p className="text-[#333333] fw500 inter-tight text-sm  tracking-wider uppercase mb-4">
